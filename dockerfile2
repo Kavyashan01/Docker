@@ -1,13 +1,18 @@
-#apache webserver on ubuntu to build image
+# apache webserver on ubuntu to build image
 
 FROM ubuntu
 
+# update the system
 RUN apt-get update
 
+# install apache2
 RUN apt-get install -y apache2
 
+# install the necessary utility apache2 packages
 RUN apt-get install -y apache2-utils
 
+# cleans unnecessary files from the system
 RUN apt-get clean
 
+# expose port 80 of apache and run apache2 in the background
 EXPOSE 80 CMD["apache2ctl","-D","FOREGROUND"]
