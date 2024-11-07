@@ -1,11 +1,16 @@
-# sample image #
+# sample image
 
+# creating an image from the ubuntu
 FROM ubuntu 
 
+# MAINTAINER - the person who is going to maintain the image
 MAINTAINER user@gmail.com
 
+# update the system 
 RUN apt-get update
 
+# install the nginx server
 RUN apt-get install -y nginx
 
+# display the message
 CMD ["echo","image created"]
